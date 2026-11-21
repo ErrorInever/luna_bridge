@@ -12,7 +12,7 @@ async def run():
         try:
             print("🔌 connecting to Luna...")
 
-            async with websockets.connect(LUNA_WS) as ws:
+            async with websockets.connect(LUNA_WS, additional_headers={"User-Agent": "luna-bridge"},) as ws:
                 print("✅ connected to Luna")
 
                 while True:
